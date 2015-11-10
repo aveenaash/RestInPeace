@@ -1,0 +1,42 @@
+apply plugin : 'java'
+
+
+//repositories define where gradle would look for files for external dependencies.
+repositories()
+{
+    mavenCentral()
+    
+//    maven {
+//        url "http://repo.mycompany.com/maven2"
+//    }
+}
+
+//specifies how the JAR file will be named
+jar {
+    baseName = 'pahilomaya-gradle'
+    version =  '0.1.0'
+}
+
+dependencies{
+    
+    compile 'asm:asm:3.3.1'
+    compile 'org.json:json:20150729'
+    compile 'com.sun.jersey:jersey-bundle:1.19'
+    compile 'com.sun.jersey:jersey-servlet:1.19'
+
+}
+task hello{
+    doLast{
+        println "Hello "
+}
+}
+
+task helloPachi() << {
+    println "I'm Gradle"
+}
+
+helloPachi.dependsOn hello
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
+}
