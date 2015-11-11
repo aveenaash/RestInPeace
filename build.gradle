@@ -23,6 +23,7 @@ dependencies{
     compile 'org.json:json:20150729'
     compile 'com.sun.jersey:jersey-bundle:1.19'
     compile 'com.sun.jersey:jersey-servlet:1.19'
+    compile 'junit:junit:4.4'
 
 }
 task hello{
