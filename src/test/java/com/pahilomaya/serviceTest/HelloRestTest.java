@@ -18,6 +18,6 @@ public class HelloRestTest {
 
     @Test
     public void testSayHello() {
-        assertEquals(helloRest.sayHello(), "Just Want to say Hello");
+        assertEquals(helloRest.sayHello(), "Want to say Hello");
     }
 }
