@@ -12,6 +12,6 @@ public class HelloRest {
     @Produces(MediaType.TEXT_PLAIN)
     public String sayHello() {
         System.out.println("sayHello called");
-        return "Just Want to say Hello";
+        return "Want to say Hello";
     }
 }

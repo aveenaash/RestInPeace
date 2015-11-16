@@ -24,6 +24,10 @@ dependencies{
     compile 'com.sun.jersey:jersey-bundle:1.19'
     compile 'com.sun.jersey:jersey-servlet:1.19'
     compile 'junit:junit:4.4'
+    compile 'com.google.inject:guice:3.0'
+    compile 'com.google.inject.extensions:guice-servlet:3.0'
+    compile 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.3.2'
+    
 
 }
 task hello{
