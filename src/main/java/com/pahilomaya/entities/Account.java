@@ -6,6 +6,10 @@ public class Account {
     private String accountType;
     private String accountBalance;
 
+    public Account() {
+
+    }
+
     public Account(String accountNumber, String accountType, String accountBalance) {
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
