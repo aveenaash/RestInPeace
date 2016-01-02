@@ -9,6 +9,8 @@ public class GetAccountDelegate {
         GetAccountsResponse response = new GetAccountsResponse();
         response.setAccounts(TestData.createAccountTestData());
         response.setSuccess(true);
+        response.setResponseMessage("Your deposit has been submitted!\\Please write \"Electronically Presented\" "
+                + "on your check.<br>Keep the paper copy for 15 days, then shred it.");
         System.out.println("before return");
         return response;
     }

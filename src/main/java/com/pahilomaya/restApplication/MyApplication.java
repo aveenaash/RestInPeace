@@ -11,6 +11,7 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.google.inject.Injector;
 import com.pahilomaya.guice.ListenerConfig;
 import com.pahilomaya.restService.Accounts;
+import com.pahilomaya.restService.ElasticSearchPractice;
 import com.pahilomaya.restService.HelloRest;
 import com.pahilomaya.restService.SOAPConsumer;
 
@@ -27,6 +28,7 @@ public class MyApplication extends Application {
         objects.add(in.getInstance(HelloRest.class));
         objects.add(in.getInstance(Accounts.class));
         objects.add(in.getInstance(SOAPConsumer.class));
+        objects.add(in.getInstance(ElasticSearchPractice.class));
 
         // If using JacksonJSON u should get instance of it also
         JacksonJaxbJsonProvider jsonProvider = in.getInstance(JacksonJaxbJsonProvider.class);

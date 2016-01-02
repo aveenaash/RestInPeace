@@ -12,6 +12,7 @@ public class HelloRest {
     @Produces(MediaType.TEXT_PLAIN)
     public String sayHello() {
         System.out.println("sayHello called");
-        return "Want to say Hello";
+        String ret = "Want to say Hello \n" + "Where did you go?? \n " + "last line of code";
+        return ret;
     }
 }
