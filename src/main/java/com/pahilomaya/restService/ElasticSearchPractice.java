@@ -18,7 +18,7 @@ import elasticsearch.utils.SearchRequest;
 @Path("/elasticsearch")
 public class ElasticSearchPractice {
 
-    private final String INDEX = "meroelastisearch";
+    private final String INDEX = "weatherinfo";// "meroelastisearch";
     private final String DOCUMENT = "Customer";
     private final String KEYFIELD = "firstName";
     private final Provider<ElasticSearchPracticeDelegate> elasticSearchPracticeDelegate;
@@ -32,9 +32,27 @@ public class ElasticSearchPractice {
     @POST
     public MultiSearchResponse.Item[] filterBuilderByName(@Context HttpServletRequest httpRequest) throws UnknownHostException {
         SearchRequest searchRequest = new SearchRequest();
-        searchRequest.requestParams.put("index", INDEX);
+        searchRequest.requestParams.put("index", "meroelastisearch");
         searchRequest.requestParams.put("keyField", KEYFIELD);
         return elasticSearchPracticeDelegate.get().getSearchByCustomerNameresponse(searchRequest);
 
+    }
+
+    @Path("/rangeFilterQuery")
+    @POST
+    public MultiSearchResponse.Item[] getFilteredQuery(@Context HttpServletRequest httpRequest) throws UnknownHostException {
+        SearchRequest searchRequest = new SearchRequest();
+        searchRequest.requestParams.put("index", INDEX);
+        return elasticSearchPracticeDelegate.get().getFilteredQuery(searchRequest);
+
+    }
+
+    @Path("/statsHighTemperatureByMonth")
+    @POST
+    public String statsHighTemperatureByMonth(@Context HttpServletRequest httpRequest)
+            throws Exception {
+        SearchRequest searchRequest = new SearchRequest();
+        searchRequest.requestParams.put("index", INDEX);
+        return elasticSearchPracticeDelegate.get().statsHighTemperatureByMonth(searchRequest).bytes().toUtf8();
     }
 }
